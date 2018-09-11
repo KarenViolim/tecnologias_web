@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cadastro de Clientes</title>
+    <!-- 1º importar o jquery -->
+    <style src="js/jquery-3.3.1.js" charset="utf-8"></style>
+    <!-- 2º - Importar o js do Bootstrap -->
+    <style src="bootstrap/bootstrap.min.js" charset="utf-8"></style>
+    <!-- 3º Importar o css do Bootstrap -->
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <!-- 4º Implementar o js (nosso código) -->
+    <script type="text/javascript">
+      $(document).ready(function() {
+        alert("Inicio de Cadastro");
+
+        $("#aba1").click(function(){
+          $("#p1").fadeIn();
+          $("#p2").fadeOut();
+          $("#p3").fadeOut();
+          $("#p4").fadeOut();
+
+
+        });
+
+        $("#aba2").click(function(){
+          $("#p2").fadeIn();
+          $("#p3").fadeOut();
+          $("#p4").fadeOut();
+          $("#p1").fadeOut();
+        });
+
+        $("#aba3").click(function(){
+          $("#p3").fadeIn();
+          $("#p4").fadeOut();
+          $("#p1").fadeOut();
+          $("#p2").fadeOut();
+        });
+
+        $("#aba4").click(function(){
+          $("#p4").fadeIn();
+          $("#p1").fadeOut();
+          $("#p2").fadeOut();
+          $("#p3").fadeOut();
+        });
+        $("form").submit(function(event){
+        $(".obrigatorio").each(function(){
+          if($(this).val() == ""){
+            event.preventDefault();
+            var campo = $(this).attr("name");
+            $(".conteudo").append("<p> O campo " + campo + " é obrigatório</p>")
+
+          }
+
+        });
+      });
+      });
+
+    </script>
+
+    <style media="screen">
+       #p2, #p3, #p4{
+        display: none;
+        text-align: center;
+
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+      <div class="container">
+
+      <a class="navbar-brand h1 navbar-mb-0"href="#">Formulário de Cadastro</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarSite">
+        <span class="navbar-toggler-icon"></span>
+
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSite">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a href="#" button class="btn btn-primary" id="aba1">Dados do Cliente</a>
+            <a href="#" button class="btn btn-primary" id="aba2">Formação Acadêmica</a>
+            <a href="#" button class="btn btn-primary" id="aba3">Dados Profissionais</a>
+            <a href="#" button class="btn btn-primary" id="aba4">Email e Senha</a>
+          </li>
+        </ul>
+
+
+        </div>
+
+      </div>
+
+    </nav>
+    <div class="text-center">
+      <div class="conteudo">
+
+      </div>
+
+    <div id="p1">
+      <h4>Cadastro</h4>
+
+      <form id="formRegistrar" action="" method="post">
+
+        <label>Usuário</label><br>
+        <input type="text" class="obrigatorio" name="usuario" value="" placeholder="Digite um nome de usuário"><br>
+
+        <label>Endereço</label><br>
+        <input type="text" class="obrigatorio" name="Endereço" value="" placeholder="Digite seu Endereço"><br>
+
+        <label>RG</label><br>
+        <input type="text" class="obrigatorio" name="RG" value="" placeholder="Digite seu RG"><br>
+
+        <label>CPF</label><br>
+        <input type="text" class="obrigatorio" name="CPF" value="" placeholder="Digite seu CPF"><br>
+
+      <hr>
+
+    </div>
+
+    <div id="p2">
+      <label>Nível Escolar</label><br>
+
+      <select name="Formação">
+        <option value="" disabled selected>Selecione uma opção: </option>
+          <option value="1">Ensino Fundamental Cursando</option>
+          <option value="2">Ensino Fundamental Incompleto</option>
+          <option value="3">Ensino Fundamental Completo</option>
+          <option value="4">Ensino Médio Cursando</option>
+          <option value="5">Ensino Médio Incompleto</option>
+          <option value="6">Ensino Médio Completo</option>
+          <option value="7">Ensino Superior Cursando</option>
+          <option value="8">Ensino Superior Incompleto</option>
+          <option value="9">Ensino Superior Completo</option><br>
+
+
+      </select>
+      <br><br>
+
+        <label>Especialização</label><br>
+        <input type="text" name="Endereço" value="" placeholder="Digite sua especialização "><br>
+
+    </div>
+
+    <div id="p3">
+      <p>Empresa em que trabalhava anteriormente?</p> <input type="text" name="trabalhava"><br>
+      <label>Data de Admissão</label><br>
+      <input type="date" name="Entrada" value=""><br>
+
+      <label>Data de Demissão</label><br>
+      <input type="date" name="Saida" value=""><br>
+      <p>Qual o motivo da saída?</p> <input type="text" name="saida"><br>
+      <p>Qual era sua função na empresa?</p> <input type="text" name="funcao"><br>
+    </div>
+
+    <div id="p4">
+      <form action="./ok.html" method="post">
+        <label>E-mail</label><br>
+        <input type="email" name="email" value="" placeholder="fulano@tal.com"><br>
+
+        <label>Senha</label><br>
+        <input type="password" name="senha" value="" placeholder="Máximo 8 caracteres" maxlength="8"><br></p>
+        <button class="btn btn-primary" type="submit" value="Registrar">Registrar</button>
+        <button class="btn btn-primary" type="reset"  value="Limpar">Limpar</button>
+      </form>
+    </div>
+  </body>
+</html>
