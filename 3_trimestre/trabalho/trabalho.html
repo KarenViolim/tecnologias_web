@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Plugin jQuery</title>
+
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/audioplayer.js"></script>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/customizado.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/audioplayer.css">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Karen Cristina Violim</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tecnologias Web</a>
+          </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Buscar">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="mt-5">Leitor de Áudio com jQuery</h1>
+    <p class="lead">O que é o plugin?</p>
+    <ul>
+      <li>É um plugin desenvolvido para realizar a reprodução de arquivos no formato MP3</li>
+    </ul>
+    <p class="lead">Como faz para utilizá-lo?</p>
+    <ul>
+      <li>É necessário importar a biblioteca jQuery e a biblioteca do CSS.</li>
+    </ul>
+      <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+      <pre style="margin: 0; line-height: 125%">
+      <span style="color: #007700">&lt;script </span><span style="color: #0000CC">src=</span><span style="background-color: #fff0f0">&quot;js/jquery-3.3.1.js&quot;</span><span style="color: #007700">&gt;&lt;/script&gt;</span>
+      <span style="color: #007700">&lt;script </span><span style="color: #0000CC">src=</span><span style="background-color: #fff0f0">&quot;js/popper.min.js&quot;</span><span style="color: #007700">&gt;&lt;/script&gt;</span>
+      <span style="color: #007700">&lt;script </span><span style="color: #0000CC">src=</span><span style="background-color: #fff0f0">&quot;js/bootstrap.min.js&quot;</span><span style="color: #007700">&gt;&lt;/script&gt;</span>
+      <span style="color: #007700">&lt;script </span><span style="color: #0000CC">src=</span><span style="background-color: #fff0f0">&quot;js/audioplayer.js&quot;</span><span style="color: #007700">&gt;&lt;/script&gt;</span>
+    </pre></div><br>
+    <ul>
+      <li>Importe os arquivos do plugin jQuery AudioPlayer.js para a página. </li>
+    </ul>
+      <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+      <pre style="margin: 0; line-height: 125%">
+      <span style="color: #007700">&lt;link</span> <span style="color: #0000CC">href=</span><span style="background-color: #fff0f0">&quot;css/bootstrap.min.css&quot;</span> <span style="color: #0000CC">rel=</span><span style="background-color: #fff0f0">&quot;stylesheet&quot;</span><span style="color: #007700">&gt;</span>
+      <span style="color: #007700">&lt;link</span> <span style="color: #0000CC">href=</span><span style="background-color: #fff0f0">&quot;css/customizado.css&quot;</span> <span style="color: #0000CC">rel=</span><span style="background-color: #fff0f0">&quot;stylesheet&quot;</span><span style="color: #007700">&gt;</span>
+      <span style="color: #007700">&lt;link</span> <span style="color: #0000CC">rel=</span><span style="background-color: #fff0f0">&quot;stylesheet&quot;</span> <span style="color: #0000CC">href=</span><span style="background-color: #fff0f0">&quot;css/audioplayer.css&quot;</span><span style="color: #007700">&gt;</span>
+    </pre></div><br>
+    <ul>
+      <li>Em seguida deve se incorporar um arquivo áudio HTML na página WEB.</li>
+      <li>O formato de áudio deve ser o .mp3 que é compatível com os navegadores.</li>
+    </ul>
+      <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+      <pre style="margin: 0; line-height: 125%">
+      <span style="color: #007700">&lt;div</span> <span style="color: #0000CC">id=</span><span style="background-color: #fff0f0">&quot;wrapper&quot;</span><span style="color: #007700">&gt;</span>
+      <span style="color: #007700">&lt;audio</span> <span style="color: #0000CC">preload=</span><span style="background-color: #fff0f0">&quot;auto&quot;</span> <span style="color: #0000CC">controls</span><span style="color: #007700">&gt;</span>
+      <span style="color: #007700">&lt;source</span> <span style="color: #0000CC">src=</span><span style="background-color: #fff0f0">&quot;audio/palmeiras.mp3&quot;</span><span style="color: #007700">&gt;</span>
+      <span style="color: #007700">&lt;/audio&gt;</span>
+      </pre> </div>
+      <br>
+    <ul>
+      <li>Chame o plugin na tag de áudio.</li>
+    </ul>
+      <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+      <pre style="margin: 0; line-height: 125%">
+      <span style="color: #007700">&lt;script&gt;</span>
+      $(<span style="color: #008800; font-weight: bold">function</span>() {
+      $(<span style="background-color: #fff0f0">&#39;audio&#39;</span>).audioPlayer();
+      });
+      <span style="color: #007700">&lt;/script&gt;</span>
+      <span style="color: #007700">&lt;/div&gt;</span>
+    </pre></div><br>
+
+    <p class="lead">Exemplo de Utilização:</p>
+    <div id="wrapper">
+      <audio preload="auto" controls>
+        <source src="audio/palmeiras.mp3">
+        </audio>
+        <script>
+        $(function() {
+          $('audio').audioPlayer();
+        });
+        </script>
+      </div>
+      <br>
+      </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Análise e Desenvolvimento de Sistemas - 1 ano.</span>
+      </div>
+    </footer>
+
+  </body>
+  </html>
